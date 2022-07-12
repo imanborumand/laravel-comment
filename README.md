@@ -43,19 +43,19 @@ class Article extends Model
 ```
 $article = Article::first();
 
-$article->comment('this is the first article!'); 
+$article->storeComment('this is the first article!'); 
 ```
 
 This package will use the authenticated user by default. Of course, if you wish, you can save a favorite user as a comment sender as follows.
 
 ```
-$article->comment('Hello, world!', user: User::first());
+$article->storeComment('Hello, world!', user: User::first());
 ```
 
 You can also add a child comment as follows:
 
 ```
-$article->comment('Hello, world!', parent: Comment::find(10));
+$article->storeComment('Hello, world!', parent: Comment::find(10));
 ```
 
 
