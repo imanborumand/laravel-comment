@@ -8,18 +8,30 @@
             "Imanborumand\\LaravelComments\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Imanborumand\\LaravelComments\\Tests\\": "tests"
+        }
+    },
     "authors": [
         {
             "name": "iman borumand zadeh",
             "email": "imanborumand@gmail.com"
         }
     ],
-    "require": {},
     "extra": {
         "laravel": {
             "providers": [
                 "Imanborumand\\LaravelComments\\LaravelCommentsServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.17"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php vendor/bin/testbench package:discover --ansi"
+        ]
     }
 }
